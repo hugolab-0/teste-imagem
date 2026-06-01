@@ -15,6 +15,7 @@ export function criarLogin() {
     loginButton.type = 'button'
     loginButton.textContent = 'Login'
     loginButton.className = 'button'
+    loginButton.onclick = () => renderizarPagina('preview')
 
     formulario.append(emailinput, senhaInput, loginButton)
     

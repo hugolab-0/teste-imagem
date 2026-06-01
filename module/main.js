@@ -16,9 +16,8 @@ const paginas = {
 
 function renderizarPagina(nomePagina) {
     const main = document.getElementById('main-content')
-
     const pagina = paginas[nomePagina].renderizar()
     main.appendChild(pagina)
 }
 
-renderizarPagina('preview')
+renderizarPagina('login')
