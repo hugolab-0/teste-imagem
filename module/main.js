@@ -1,8 +1,24 @@
-'use stric'
+'use strict'
 
-import {createPreview, criarPreview} from './pages/preview.js'
+import { criarPreview } from './pages/preview.js'
+import { criarLogin } from './pages/login.js'
 
-const main = document.getElementById('main-content')
+const paginas = {
+    preview: {
+        titulo: 'Preview de Imagens',
+        renderizar: criarPreview
+    },
+    login: {
+        titulo: 'Login',
+        renderizar: criarLogin
+    }
+}
 
-const preview = criarPreview()
-main.appendChild(preview)
+function renderizarPagina(nomePagina) {
+    const main = document.getElementById('main-content')
+
+    const pagina = paginas[nomePagina].renderizar()
+    main.appendChild(pagina)
+}
+
+renderizarPagina('preview')
